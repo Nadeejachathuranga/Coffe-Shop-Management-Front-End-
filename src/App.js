@@ -1,5 +1,9 @@
 import logo from './logo.svg';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
+import hall from './img/coverPage.JPG';
+import {Home} from "./view/home/Home";
+
 
 function App() {
   return (
@@ -20,8 +24,14 @@ function App() {
       </header>
     </div>*/
     <>
-     <h1>Up Coming Moviessss</h1>
-    </>
+       
+<BrowserRouter>
+<Routes>
+    <Route path={"/*"} Component={Home}></Route>
+</Routes>
+
+</BrowserRouter>
+</>
   );
 }
 
