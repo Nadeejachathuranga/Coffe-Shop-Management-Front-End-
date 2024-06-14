@@ -1,17 +1,39 @@
-import React from 'react'
-import hall from '../../img/coverPage.JPG';
 
-export  function Home() {
+import React, { useState, useEffect } from 'react';
+import {Product} from "../product/Product";
+
+export default function Home() {
+
+const [data, setData] = useState([]);
+
+useEffect(() => {
+  fetchData();
+}, []); 
+
+const fetchData = async () => {
+  try {
+    const res = await fetch('/product-data.json');
+    const jData = await res.json();
+    setData(jData);
+  } catch (error) {
+    console.log("Error: " + error);
+  }
+};
+
   return (
     <>
-    <div className=" bg-blue-300 position: relative;">
-        <img className=" h-screen w-screen brightness-25" src={hall} alt="" />
-            <div className="h-[100px] w-[400px] bg-transparent absolute top-[350px] ml-[260px] flex">
-                 <button  className=" w-[150px] h-[50px] rounded-md bg-cyan-500  hover:bg-cyan-600 mt-4 mr-5">Register</button>
-                 <button className=" w-[150px] h-[50px] rounded-md bg-cyan-500 hover:bg-cyan-600 mt-4 mr-2 ">Sign Up</button>
+    <div className="flex">
+                <div className="mt-5 mb-5 flex flex-wrap justify-center items-center mx-auto">
+                    {/*<Product></Product>*/}
 
+                    {
+                       data.map((product) => 
+                        <Product key={product.id} data={product} />
+                      )
+                    }
+
+                </div>
             </div>
-    </div>
     </>
   )
 }

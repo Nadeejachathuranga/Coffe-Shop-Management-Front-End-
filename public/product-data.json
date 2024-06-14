@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "name": "Milk Coffee",
+      "price": 200,
+      "img": "Iced_Latte.jpg"
+    },
+  
+    {
+      "id": 2,
+      "name": "Hot Coffee",
+      "price": 300,
+      "img": "Iced_Latte.jpg"
+    },
+  
+    {
+      "id": 3,
+      "name": "Ice Coffe",
+      "price": 250,
+      "img": "Iced_Latte.jpg"
+    }
+  ]
