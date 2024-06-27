@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import {Product} from "../product/Product";
 
+
+
 export default function Home() {
 
 const [data, setData] = useState([]);

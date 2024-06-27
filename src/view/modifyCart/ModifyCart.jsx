@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Product } from '../product/Product';
 
 let itemList = [];
 
@@ -38,7 +39,9 @@ export default function ModifyCart({ data }) {
             setItemCount(itemCount - 1);
         } else {
             alert("Item count can't be less than 1");
+          
         }
+       
     };
 
     const onIncreaseItemCount = () => {
@@ -53,7 +56,7 @@ export default function ModifyCart({ data }) {
             >
                 -
             </button>
-            <small className="text-[12px]">{itemCount}</small>
+            <small className="text-[12px] ml-12">{itemCount}</small>
             <button
                 className="float-right text-[12px] bg-yellow-300 rounded-lg h-5 w-7"
                 onClick={onIncreaseItemCount}

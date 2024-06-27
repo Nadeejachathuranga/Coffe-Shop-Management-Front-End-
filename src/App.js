@@ -4,6 +4,7 @@ import './App.css';
 import hall from './img/coverPage.JPG';
 import {InitialUi} from "./view/initialUi/InitialUi";
 import Home from './view/home/Home';
+import Testing from './view/testing/Testing';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
 <Routes>
     <Route path={"/"} Component={InitialUi}></Route>
     <Route path={"/Home"} Component={Home}></Route>
+    <Route path={"/testing"} Component={Testing}></Route>
 </Routes>
 
 </BrowserRouter>
