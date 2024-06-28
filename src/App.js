@@ -5,6 +5,7 @@ import hall from './img/coverPage.JPG';
 import {InitialUi} from "./view/initialUi/InitialUi";
 import Home from './view/home/Home';
 import Testing from './view/testing/Testing';
+import LoginIn from './view/loginIn/LoginIn';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
     <Route path={"/"} Component={InitialUi}></Route>
     <Route path={"/Home"} Component={Home}></Route>
     <Route path={"/testing"} Component={Testing}></Route>
+    <Route path={"/login"} Component={LoginIn}></Route>
 </Routes>
 
 </BrowserRouter>
