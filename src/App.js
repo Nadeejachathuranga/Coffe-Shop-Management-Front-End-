@@ -6,6 +6,8 @@ import {InitialUi} from "./view/initialUi/InitialUi";
 import Home from './view/home/Home';
 import Testing from './view/testing/Testing';
 import LoginIn from './view/loginIn/LoginIn';
+import SignUp from './view/signUp/signUp';
+import userAccount from './view/userAccount/userAccount';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
     <Route path={"/Home"} Component={Home}></Route>
     <Route path={"/testing"} Component={Testing}></Route>
     <Route path={"/login"} Component={LoginIn}></Route>
+    <Route path={"/sign"} Component={SignUp}></Route>
+    <Route path={"/us"} Component={userAccount}></Route>
 </Routes>
 
 </BrowserRouter>

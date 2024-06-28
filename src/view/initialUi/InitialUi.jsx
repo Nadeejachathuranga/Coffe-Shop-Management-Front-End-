@@ -13,6 +13,8 @@ export  function InitialUi() {
                   <Link to= {"/Home"}> Get Start </Link></button>
                   <button  className=" w-[250px] h-[50px] rounded-md bg-cyan-500  hover:bg-cyan-600 mt-4 mr-5">
                   <Link to= {"/login"}> Login </Link></button>
+                  <button  className=" w-[250px] h-[50px] rounded-md bg-cyan-500  hover:bg-cyan-600 mt-4 mr-5">
+                  <Link to= {"/sign"}> Sign Up </Link></button>
             </div>
            
         
