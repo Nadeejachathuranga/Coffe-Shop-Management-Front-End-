@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     
     console.log("Name:", name);
@@ -15,6 +19,33 @@ function SignUp() {
     console.log("Contact Number:", contactNumber);
     console.log("Password:", password);
    
+    const data = {
+      name,
+      email,
+      contactNumber,
+      password,
+    };
+
+    try {
+     
+      const response = await axios.post('http://localhost:8070/user/save', data);
+      
+      
+      if (response.status === 200) {
+        console.log('Sign up successful', response.data);
+        
+       
+        navigate(`/us?name=`+name);
+      } else {
+        alert("Sign up failed. Please try again.")
+        console.log('Sign up failed', response.data);
+        setError('Sign up failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('There was an error with the sign-up:', error);
+      setError('There was an error. Please check your input and try again.');
+    }
+alert("clicked")
   };
 
   return (

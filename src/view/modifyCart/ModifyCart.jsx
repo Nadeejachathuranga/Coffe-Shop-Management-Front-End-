@@ -8,6 +8,7 @@ let itemList = [];
 export default function ModifyCart({ data }) {
    
     const [itemCount, setItemCount] = useState(1);
+    const [userID,setUserID]=useState("");
 
     useEffect(() => {
         if (data.isAdded) {
@@ -15,7 +16,8 @@ export default function ModifyCart({ data }) {
             if (!existingItem) {
                 itemList.push({
                     product: data.product,
-                    itemCount: itemCount
+                    itemCount: itemCount,
+                    userID:userID
                 });
                 console.log(itemList);
             }
@@ -28,7 +30,8 @@ export default function ModifyCart({ data }) {
             const index = itemList.indexOf(existingItem);
             itemList.splice(index, 1, {
                 product: data.product,
-                itemCount: itemCount
+                itemCount: itemCount,
+                userID:userID
             });
             console.log(itemList);
         }
@@ -46,6 +49,7 @@ export default function ModifyCart({ data }) {
 
     const onIncreaseItemCount = () => {
         setItemCount(itemCount + 1);
+        setUserID("nadee")
     };
 
     return (

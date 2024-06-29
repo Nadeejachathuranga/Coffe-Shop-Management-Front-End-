@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import {Product} from "../product/Product";
-
+import axios from 'axios';
 
 
 export default function Home() {
 
-const [data, setData] = useState([]);
+/*const [data, setData] = useState([]);
 
 useEffect(() => {
   fetchData();
@@ -20,7 +20,23 @@ const fetchData = async () => {
   } catch (error) {
     console.log("Error: " + error);
   }
-};
+};*/
+const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+  
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:8070/product/');
+            setData(response.data);
+        } catch (error) {
+            console.log('Axios error:', error);
+        }
+    };
 
   return (
     <>

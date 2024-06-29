@@ -3,29 +3,52 @@ import React, { useState, useEffect } from 'react';
 import userAccount from '../userAccount/userAccount';
 import {Route, Routes} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import Home from '../home/Home';
+import axios from 'axios';
 
 export default function LoginIn() {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Username:", username);
+    console.log("Email:", email);
     console.log("Password:", password);
 
 
 
 
-    if(password==="nadee"){
+  /*  if(password==="nadee"){
         alert("you re welcome")
         setIsActive(!isActive);
         navigate('/us?name='+username);
     }else{
       alert("Miss match the password")
-    }
+    }*/
+     /* try {
+        const response = await axios.get(`http://localhost:8070/user/Userlogin`);
+        setProductData(response.data);
+      } catch (error) {
+        console.error('Error searching product:', error);
+      }*/
 
+        try {
+         
+          const lUser = { email, password };
+         const response = await axios.get('http://localhost:8070/user/Userlogin',lUser );
+          
+         
+          if (!response.data.authenticated) {
+            navigate('/us?name='+email);
+          } else {
+            alert("Incorrect username or password. Please try again.");
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+          alert("An error occurred during login. Please try again later.");
+        }
 
 
   };
@@ -40,9 +63,9 @@ export default function LoginIn() {
           <label htmlFor="username">Username</label>
           <input className="mt-2 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
             type="text" 
-            id="username" 
-            value={username} 
-            onChange={(e) => setUsername(e.target.value)} 
+            id="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
             required
           />
         </div>
@@ -63,7 +86,6 @@ export default function LoginIn() {
     </div>
     </div>
     </div>
-  
         </>
   )
 }

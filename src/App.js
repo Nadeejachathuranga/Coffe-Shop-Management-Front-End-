@@ -8,6 +8,7 @@ import Testing from './view/testing/Testing';
 import LoginIn from './view/loginIn/LoginIn';
 import SignUp from './view/signUp/signUp';
 import userAccount from './view/userAccount/userAccount';
+import Dashboard from './view/dashBoad/dashBoad';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
     <Route path={"/login"} Component={LoginIn}></Route>
     <Route path={"/sign"} Component={SignUp}></Route>
     <Route path={"/us"} Component={userAccount}></Route>
+    <Route path={"/ds"} Component={Dashboard}></Route>
 </Routes>
 
 </BrowserRouter>

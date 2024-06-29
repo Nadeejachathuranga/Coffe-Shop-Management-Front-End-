@@ -10,7 +10,7 @@ export  function InitialUi() {
         <img className=" h-screen w-screen brightness-25" src={hall} alt="" />
                     <div className="h-[100px] w-[400px] bg-transparent absolute top-[350px] ml-[260px] flex">
                  <button  className=" w-[250px] h-[50px] rounded-md bg-cyan-500  hover:bg-cyan-600 mt-4 mr-5">
-                  <Link to= {"/Home"}> Get Start </Link></button>
+                  <Link to= {"/ds"}> Addmin </Link></button>
                   <button  className=" w-[250px] h-[50px] rounded-md bg-cyan-500  hover:bg-cyan-600 mt-4 mr-5">
                   <Link to= {"/login"}> Login </Link></button>
                   <button  className=" w-[250px] h-[50px] rounded-md bg-cyan-500  hover:bg-cyan-600 mt-4 mr-5">

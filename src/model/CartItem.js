@@ -14,6 +14,7 @@ import {ProductModel} from "./ProductModel";
  * @typedef {Object} CartItem
  * @property {ProductModel} product - The product details.
  * @property {number} itemCount - The number of this product in the cart.
+ * @property {number} userID
  */
 
 
